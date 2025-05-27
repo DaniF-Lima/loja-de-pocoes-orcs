@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Changed to en as most text is now English-ish Orcish -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grinning Orc - Potions & Brews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Vollkorn:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top-row">
+                <div class="logo">
+                    <h1>The Grinning Orc</h1>
+                    <p class="site-tagline-header">Potions & Brews for Hardy Folk!</p>
+                </div>
+                <div class="header-search">
+                    <input type="text" placeholder="Sniff out brews..." aria-label="Search for potions">
+                    <button type="submit" aria-label="Search"><span class="icon">🔍</span></button>
+                </div>
+                <div class="header-actions">
+                    <a href="#" class="action-link" aria-label="Wishlist of Brews">
+                        <span class="icon">❤️</span>
+                        <span class="action-text">Wants List</span>
+                    </a>
+                    <a href="#" class="action-link" aria-label="Loot Sack (Shopping Cart)">
+                        <span class="icon">🛒</span>
+                        <span class="action-text">Loot Sack</span>
+                    </a>
+                    <a href="#" class="action-link" aria-label="Log In / Sign Up">
+                        <span class="icon">👤</span>
+                        <span class="action-text">Log In</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Campfire (Home)</a></li>
+                    <li class="dropdown">
+                        <a href="#">Brew Types <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="grogs-of-mending.html">Grogs of Mending</a></li>
+                            <li><a href="elixirs-of-might.html">Elixirs of Might</a></li>
+                            <li><a href="tricky-concoctions.html">Tricky Concoctions</a></li>
+                            <li><a href="rare-scraps.html">Rare Scraps & Bits</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="bargains.html">Bargains!</a></li>
+                    <li><a href="our-warband.html">Our Warband</a></li>
+                    <li><a href="shout-at-us.html">Shout at Us (Contact)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-content">
+            <section class="ofertas">
+                <h2>Warboss's Specials</h2>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="oferta1" name="ofertas_selecionadas" value="guts_mender">
+                        <label for="oferta1" data-product-name="Orc's Guts Mender"><span class="potion-icon"></span> Orc's Guts Mender - Patches 50 HP!</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="oferta2" name="ofertas_selecionadas" value="troll_might">
+                        <label for="oferta2" data-product-name="Troll's Might Brew"><span class="potion-icon"></span> Troll's Might Brew - SMASH +20% for 10 min.</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="oferta3" name="ofertas_selecionadas" value="sneaky_git">
+                        <label for="oferta3" data-product-name="Sneaky Git Juice"><span class="potion-icon"></span> Sneaky Git Juice - Go unseen for 30 sec.</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="oferta4" name="ofertas_selecionadas" value="cunnin_concoction">
+                        <label for="oferta4" data-product-name="Cunnin' Concoction"><span class="potion-icon"></span> Cunnin' Concoction - Get XP faster, ya git!</label>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="mais-vendido">
+                <h2>Most Guzzled Brew</h2>
+                <img src="assets/poção 1.png" alt="WAAAGH! Brew of Ultimate Luck">
+                <p class="description">
+                    <strong>WAAAGH! Brew of Ultimate Luck</strong><br>
+                    More luck in yer scraps. Lasts all day.
+                    Warning: Might make ya too lucky (for others)!
+                </p>
+            </section>
+        </div>
+
+        <section class="outros-produtos">
+            <h2>Other Grog & Goodies</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="assets/pocao-sono.png" alt="Dead Man's Sleep Draught">
+                    <h3>Dead Man's Sleep Draught</h3>
+                    <p>Sleep like a log, wake up ready to krump.</p>
+                    <p class="price"><strong>Price:</strong> 15 Gold Pieces</p>
+                    <div class="select-potion">
+                        <input type="checkbox" id="produto1_select" name="produtos_selecionados" value="dead_sleep">
+                        <label for="produto1_select">Grab It!</label>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="assets/pocao-amor-2_cut.png" alt="Love-Struck Potion (Don't tell the Warboss)">
+                    <h3>Love-Struck Potion</h3>
+                    <p>Make someone... fond of ya. Use wisely, runt.</p>
+                    <p class="price"><strong>Price:</strong> 50 Gold Pieces</p>
+                    <div class="select-potion">
+                        <input type="checkbox" id="produto2_select" name="produtos_selecionados" value="love_potion">
+                        <label for="produto2_select">Grab It!</label>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="assets/pocao-felina-1_cut.png" alt="Grot's Agility Juice">
+                    <h3>Grot's Agility Juice</h3>
+                    <p>Move quick and sneaky, like a well-fed grot.</p>
+                    <p class="price"><strong>Price:</strong> 25 Gold Pieces</p>
+                    <div class="select-potion">
+                        <input type="checkbox" id="produto3_select" name="produtos_selecionados" value="grot_agility">
+                        <label for="produto3_select">Grab It!</label>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="assets/antidoto-universal_cut.png" alt="Gut-Cleaner Brew">
+                    <h3>Gut-Cleaner Brew</h3>
+                    <p>Fixes most nasty poisons or minor curses.</p>
+                    <p class="price"><strong>Price:</strong> 30 Gold Pieces</p>
+                    <div class="select-potion">
+                        <input type="checkbox" id="produto4_select" name="produtos_selecionados" value="gut_cleaner">
+                        <label for="produto4_select">Grab It!</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Trail Markers</h4>
+                    <ul>
+                        <li><a href="index.html">Campfire (Home)</a></li>
+                        <li><a href="all-brews.html">All Brews</a></li>
+                        <li><a href="rare-scraps.html">Shiny Bitz (Rare Ingredients)</a></li>
+                        <li><a href="#">Ask da Wise-Orc (FAQ)</a></li>
+                        <li><a href="#">Camp Map (Site)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Brewin' & Bellowin'</h4>
+                    <ul>
+                        <li><a href="our-warband.html">Meet da Brewmasters</a></li>
+                        <li><a href="shout-at-us.html">Send a Squig (Contact)</a></li>
+                        <li><a href="#">Shoutin' Horn: (Ugh) 123-GRUNT</a></li>
+                        <li><a href="#">Da Stompin' Ground: Orc Camp, Tent #42</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Join da Mob</h4>
+                    <p>Follow us on da scrawlin' boards:</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="FaceSmasha"><span class="icon-social">📘</span></a>
+                        <a href="#" aria-label="InstaGrog"><span class="icon-social">📸</span></a>
+                        <a href="#" aria-label="TwitGob"><span class="icon-social">🐦</span></a>
+                        <a href="#" aria-label="WarTube"><span class="icon-social">🎞️</span></a>
+                    </div>
+                    <h4 class="newsletter-title">Warboss's Scroll</h4>
+                    <p>Get secret stashes & WAAAGH! news in yer grubby hands!</p>
+                    <form class="newsletter-form">
+                        <input type="email" name="email_newsletter" placeholder="Yer scroll-name (email)" required>
+                        <button type="submit">Sign Up, Maggot!</button>
+                    </form>
+                </div>
+            </div>
+             <div class="footer-bottom">
+                <p>Brews fermented by moonlight by Gromk Snagglefang and his ladz.</p>
+                <p>Potion images for show. Effects might be... surprising. Ask yer shaman before guzzlin'.</p>
+                <p>The Grinning Orc © <span id="footerCurrentYear"></span> - Part of Da Big WAAAGH! Ltd.</p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="newsletterPopup" class="newsletter-popup">
+        <div class="popup-content">
+            <button id="popupCloseButton" class="popup-close" aria-label="Close Popup">×</button>
+            <div class="popup-visual-area">
+                <img src="assets/background-pop-up.1.png" alt="Orc Tavern Background for Newsletter" class="popup-background-image"> <!-- Placeholder image, create or find one -->
+                <div class="popup-text-overlay">
+                    <h2 class="popup-title">JOIN DA WARBOSS'S<br>SCROLL!</h2>
+                    <p class="popup-subtitle">GET DA BEST LOOT & SECRET BREWS!</p>
+                    <span class="popup-join-now-visual">SIGN UP NOW, YA GIT!</span>
+                </div>
+            </div>
+            <form id="popupNewsletterForm" class="popup-form-area">
+                <input type="email" id="popupEmailInput" name="popup_email" placeholder="Yer best scroll-name..." required aria-label="Email for newsletter popup">
+                <button type="submit" class="popup-submit-button">JOIN DA WAAAGH!</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

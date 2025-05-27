@@ -1,0 +1,735 @@
+body {
+    font-family: 'Vollkorn', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3A4F2A; /* Dark Moss Green */
+    color: #3E2723; /* Dark Brown for text */
+}
+.container {
+    max-width: 960px;
+    margin: auto;
+    background-color: #E8DCC3; /* Parchment/Light Beige */
+    padding: 0 20px 20px 20px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Header Styles */
+header {
+    background-color: #5D4037; /* Dark Wood Brown */
+    padding: 10px 20px;
+    border-bottom: 3px solid #3E2723; /* Very Dark Brown */
+    margin-bottom: 20px;
+    color: #E8DCC3; /* Light text on dark header */
+}
+
+.header-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.logo h1 {
+    font-family: 'Uncial Antiqua', cursive;
+    color: #D4BF8C; /* Dull Gold/Light Parchment for Logo */
+    margin: 0;
+    font-size: 2.2em;
+    text-align: left;
+    line-height: 1.1;
+}
+.site-tagline-header { /* Added this class to HTML */
+    font-family: 'Vollkorn', serif;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #BCAAA4; /* Lighter brown */
+    margin: 0;
+}
+
+
+.header-search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #A1887F; /* Medium Brown */
+    border-radius: 20px;
+    padding: 5px 5px 5px 10px;
+    background-color: #E8DCC3; /* Parchment */
+    flex-grow: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.header-search input[type="text"] {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Vollkorn', serif;
+    color: #3E2723; /* Dark Brown text */
+    flex-grow: 1;
+}
+.header-search input[type="text"]::placeholder {
+    color: #795548; /* Medium Brown */
+}
+
+.header-search button {
+    background-color: #556B2F; /* Dark Olive Green */
+    color: #E8DCC3; /* Light text */
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Uncial Antiqua', cursive; /* Keep button text thematic */
+}
+.header-search button:hover {
+    background-color: #6B8E23; /* Lighter Olive on hover */
+}
+.header-search button .icon {
+    line-height: 1;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-actions .action-link {
+    color: #D4BF8C; /* Dull Gold/Light Parchment */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+    font-family: 'Uncial Antiqua', cursive;
+}
+.header-actions .action-link:hover {
+    color: #FFF; /* Brighter on hover */
+}
+
+.header-actions .icon {
+    font-size: 1.6em;
+}
+
+.header-actions .action-text {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .header-actions .action-text {
+        display: inline;
+    }
+    .logo h1 {
+        font-size: 2.8em; /* Slightly larger for the new font */
+    }
+}
+
+.main-navigation {
+    background-color: #6B8E23; /* Olive Drab Green */
+    border-radius: 4px;
+}
+
+.main-navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-navigation ul li a {
+    display: block;
+    color: #E8DCC3; /* Light Parchment text */
+    text-decoration: none;
+    padding: 12px 18px;
+    font-size: 1em; /* Vollkorn is a bit smaller, so 1em is fine */
+    font-family: 'Uncial Antiqua', cursive;
+    transition: background-color 0.3s ease;
+}
+
+.main-navigation ul li a:hover,
+.main-navigation ul li:hover > a {
+    background-color: #556B2F; /* Darker Olive on hover */
+    color: #FFF;
+}
+
+/* !!! CRITICAL FIX: Added position: relative for dropdown positioning !!! */
+.main-navigation .dropdown {
+    position: relative;
+}
+
+.main-navigation .dropdown-arrow {
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+
+.main-navigation .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%; /* Positioned relative to the .dropdown li */
+    background-color: #556B2F; /* Darker Olive for dropdown */
+    min-width: 200px;
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    flex-direction: column;
+}
+
+.main-navigation .dropdown:hover .dropdown-menu,
+.main-navigation .dropdown-menu.active { /* For JS click */
+    display: flex;
+}
+
+.main-navigation .dropdown-menu li {
+    width: 100%;
+}
+
+.main-navigation .dropdown-menu li a {
+    padding: 10px 15px;
+    color: #E8DCC3;
+}
+
+.main-navigation .dropdown-menu li a:hover {
+    background-color: #4A5D23; /* Even Darker Olive */
+    color: white;
+}
+
+/* Content Sections */
+section, footer { /* Footer is styled more specifically below */
+    border: 1px solid #A1887F; /* Medium Brown border */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+h1, h2, h3 { /* General headings, specific ones are overridden */
+    font-family: 'Uncial Antiqua', cursive;
+    text-align: center;
+}
+header .logo h1 { /* Ensure logo h1 is not centered by the general rule */
+    text-align: left;
+}
+
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.ofertas, .mais-vendido {
+    flex: 1;
+    min-width: 300px;
+    border: 1px solid #A1887F; /* Medium Brown */
+    padding: 15px;
+    background-color: #F5F0E1; /* Lighter Parchment */
+    border-radius: 4px;
+}
+.ofertas ul {
+    list-style-type: none;
+    padding: 0;
+}
+.ofertas li {
+    padding: 10px 5px;
+    border-bottom: 1px dashed #C8BBAE; /* Dashed lighter brown */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.ofertas li:last-child {
+    border-bottom: none;
+}
+.ofertas .potion-icon { /* Simpler icon for Orc theme */
+    width: 15px;
+    height: 15px;
+    background-color: #556B2F; /* Dark Olive */
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    border: 1px solid #3A4F2A;
+}
+.ofertas input[type="checkbox"] {
+    margin-right: 5px;
+    transform: scale(1.2);
+    accent-color: #556B2F; /* Thematic checkbox color */
+}
+.mais-vendido img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border: 2px solid #795548; /* Medium Brown border for image */
+    padding: 5px;
+    background-color: #E8DCC3; /* Parchment bg */
+    border-radius: 4px;
+}
+.mais-vendido .description {
+    font-style: normal;
+    color: #3E2723; /* Dark Brown text */
+    text-align: center;
+    padding: 0 10px;
+}
+.outros-produtos .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+}
+.outros-produtos .product-card {
+    border: 1px solid #A1887F; /* Medium Brown */
+    padding: 15px;
+    text-align: center;
+    background-color: #F5F0E1; /* Lighter Parchment */
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.outros-produtos .product-card img {
+    max-width: 80px;
+    height: auto;
+    margin: 0 auto 10px auto;
+}
+.outros-produtos .product-card h3 {
+    font-size: 1.3em; /* Uncial Antiqua can be larger */
+    margin-bottom: 8px;
+    color: #5D4037; /* Dark Wood Brown */
+    line-height: 1.2;
+}
+.outros-produtos .product-card p {
+    font-size: 0.95em; /* Vollkorn is legible */
+    margin-bottom: 10px;
+    flex-grow: 1;
+    color: #4E342E; /* Slightly lighter dark brown */
+}
+.outros-produtos .product-card .price {
+    font-weight: bold;
+    color: #556B2F; /* Dark Olive */
+    margin-bottom: 10px;
+}
+.outros-produtos .product-card .select-potion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: auto;
+}
+.outros-produtos .product-card .select-potion label { /* Style the "Grab It!" label like a button */
+    background-color: #6B8E23; /* Olive Drab */
+    color: #E8DCC3;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+.outros-produtos .product-card .select-potion label:hover {
+    background-color: #556B2F; /* Darker Olive */
+}
+.outros-produtos .product-card input[type="checkbox"] {
+    transform: scale(1.1);
+    accent-color: #556B2F; /* Thematic checkbox color */
+    margin-right: 5px; /* Space if label isn't hiding it */
+    display: none; /* Hide checkbox, label acts as the button */
+}
+
+
+h2 {
+    color: #5D4037; /* Dark Wood Brown for H2 */
+    border-bottom: 2px solid #A1887F; /* Medium Brown */
+    padding-bottom: 8px;
+    margin-top: 0;
+    font-size: 2em; /* Uncial Antiqua can be larger */
+}
+label {
+    cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #5D4037; /* Dark Wood Brown */
+    color: #D4BF8C; /* Dull Gold for general footer text for better contrast */
+    padding: 30px 20px 20px;
+    margin-top: 30px;
+    border-top: 3px solid #3E2723; /* Very Dark Brown */
+    border-radius: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+    padding: 0 10px;
+}
+
+.footer-column h4 {
+    font-family: 'Uncial Antiqua', cursive;
+    color: #E8DCC3; /* Parchment for titles in footer */
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #A1887F; /* Medium Brown */
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #D4BF8C; /* Dull Gold/Light Parchment */
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #D4BF8C; /* Consistent Dull Gold for paragraph text */
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #D4BF8C;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: #fff;
+}
+
+.newsletter-title {
+    margin-top: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #A1887F; /* Medium Brown */
+    border-radius: 4px 0 0 4px;
+    background-color: #E8DCC3; /* Parchment */
+    color: #3E2723; /* Dark Brown text */
+    font-family: 'Vollkorn', serif;
+}
+.newsletter-form input[type="email"]::placeholder {
+    color: #795548; /* Medium Brown */
+}
+
+.newsletter-form button {
+    padding: 10px 15px;
+    background-color: #556B2F; /* Dark Olive */
+    color: #E8DCC3; /* Light text */
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-family: 'Uncial Antiqua', cursive;
+    transition: background-color 0.3s ease;
+}
+.newsletter-form button:hover {
+    background-color: #6B8E23; /* Lighter Olive */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #A1887F; /* Medium Brown */
+    font-size: 0.9em;
+    color: #D4BF8C; /* Dull Gold for bottom text */
+}
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+/* Newsletter Popup Styles */
+.newsletter-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 30, 20, 0.85); /* Dark, muddy overlay */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Vollkorn', serif; /* Body font for popup text */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.newsletter-popup.active {
+    display: flex;
+}
+
+.popup-content {
+    background-color: #E8DCC3; /* Parchment */
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    max-width: 520px; /* Slightly wider for Uncial Antiqua */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid #5D4037; /* Dark Wood Brown border */
+}
+
+.popup-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #E8DCC3;
+    border: 1px solid #A1887F;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    line-height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+.popup-close:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.popup-visual-area {
+    position: relative;
+    background-color: #3A4F2A; /* Moss Green fallback */
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; /* Make it more of a texture */
+}
+
+.popup-text-overlay {
+    position: relative;
+    z-index: 5;
+    color: #FFF; /* White text on dark visual area */
+    padding: 20px;
+}
+
+.popup-title {
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 2.4em;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: #E8DCC3; /* Parchment/Light text */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.popup-subtitle {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #D4BF8C; /* Dull Gold */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.popup-join-now-visual {
+    display: inline-block;
+    background-color: #A1887F; /* Medium Brown */
+    color: #3E2723; /* Dark Brown text */
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Uncial Antiqua', cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid #5D4037;
+}
+
+.popup-form-area {
+    padding: 25px 30px;
+    background-color: #E8DCC3; /* Parchment for form area */
+}
+
+.popup-form-area input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 2px solid #A1887F; /* Medium Brown border */
+    border-radius: 5px;
+    font-family: 'Vollkorn', serif;
+    font-size: 1em;
+    box-sizing: border-box;
+    color: #3E2723;
+    background-color: #F5F0E1; /* Lighter Parchment for input */
+}
+.popup-form-area input[type="email"]::placeholder {
+    color: #795548; /* Medium Brown placeholder */
+}
+
+.popup-form-area input[type="email"]:focus {
+    outline: none;
+    border-color: #556B2F; /* Dark Olive focus */
+    box-shadow: 0 0 0 2px rgba(85, 107, 47, 0.3);
+}
+
+.popup-submit-button {
+    background-color: #556B2F; /* Dark Olive */
+    color: #E8DCC3; /* Light Text */
+    border: 1px solid #3A4F2A; /* Darker Green border */
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.popup-submit-button:hover {
+    background-color: #6B8E23; /* Lighter Olive on hover */
+    transform: translateY(-2px);
+}
+
+/* Feedback message styling for JS */
+#selected-items-feedback {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #5D4037; /* Dark Wood Brown */
+    color: #E8DCC3; /* Parchment text */
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 1001;
+    display: none;
+    font-family: 'Uncial Antiqua', cursive;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    border: 1px solid #3E2723;
+}
+
+/* Styles for simple content pages */
+.main-content-page {
+    padding: 20px 0; /* Espaçamento para páginas de conteúdo simples */
+}
+
+.page-content {
+    background-color: #F5F0E1; /* Lighter Parchment, como os cards */
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #A1887F; /* Medium Brown border */
+}
+
+.page-content p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #4E342E; /* Slightly lighter dark brown */
+}
+
+.page-content ul {
+    list-style: inside disc; /* Estilo de lista simples */
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.page-content li {
+    margin-bottom: 8px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #5D4037; /* Dark Wood Brown */
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #A1887F; /* Medium Brown */
+    border-radius: 4px;
+    background-color: #E8DCC3; /* Parchment */
+    color: #3E2723; /* Dark Brown text */
+    font-family: 'Vollkorn', serif;
+    box-sizing: border-box; /* Importante para o width 100% */
+}
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #556B2F; /* Dark Olive */
+    color: #E8DCC3; /* Light text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+.contact-form button:hover {
+    background-color: #6B8E23; /* Lighter Olive */
+}
+
+/* !!! NEW CLASS for action buttons from other pages !!! */
+.btn-orc-action {
+    background-color: #6B8E23; /* Olive Drab or similar */
+    color: #E8DCC3;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Uncial Antiqua', cursive;
+    cursor: pointer;
+    text-decoration: none; /* If used on <a> tags */
+    display: inline-block; /* For <a> and consistent spacing */
+    font-size: 1em; /* Adjust as needed */
+    transition: background-color 0.2s ease;
+}
+.btn-orc-action:hover {
+    background-color: #556B2F; /* Darker Olive */
+}
